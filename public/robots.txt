@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://elderabusecalc.com/sitemap-index.xml

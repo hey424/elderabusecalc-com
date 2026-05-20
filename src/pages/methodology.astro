@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const title = 'Methodology — How We Estimate Elder Abuse Compensation | elderabusecalc.com';
+const description = 'The framework behind our elder abuse settlement estimator: state Elder Abuse Acts, federal OBRA / CMS F-Tag evidence, damages categories, and wrongful death overlays.';
+---
+<BaseLayout title={title} description={description}>
+  <h1>Methodology &mdash; How We Estimate Elder Abuse Compensation</h1>
+  <p><em>Reviewed by Marlowe Quinn (MQ), Elder Abuse Practice Lead. Updated May 2026.</em></p>
+
+  <p>This page documents how the calculator on the homepage arrives at a recovery range. The estimate is built from published settlement data, the damages categories that govern elder abuse and nursing home neglect litigation, and the state-statutory enhancements that materially change case economics in a handful of jurisdictions. Each component is briefly explained below.</p>
+
+  <h2>The two legal frameworks that matter most</h2>
+
+  <h3>State Elder Abuse Acts</h3>
+
+  <p>Most states have a dedicated elder abuse statute. California&rsquo;s Welfare &amp; Institutions Code &sect; 15600 et seq. (the Elder Abuse and Dependent Adult Civil Protection Act, "EADACPA") is the most plaintiff-favorable; &sect; 15657 in particular authorizes attorney fees, heightened damages, and (uniquely) the recovery of pre-death pain and suffering by heirs when the plaintiff proves "recklessness, oppression, fraud, or malice" by clear and convincing evidence. Florida (Chapter 415, with civil cause of action under &sect; 415.1111), Texas (Chapter 48 of the Human Resources Code), Illinois (Nursing Home Care Act, with treble damages for willful violations), and most other states have parallel structures, though the available remedies and standards of proof vary.</p>
+
+  <h3>Federal OBRA 1987 and CMS F-Tags</h3>
+
+  <p>The Omnibus Budget Reconciliation Act of 1987 (OBRA) imposes uniform care standards on Medicare and Medicaid-certified nursing homes. CMS surveyors inspect facilities and document deficiencies using a coded system of "F-Tags." A handful of F-Tags do most of the work in litigation:</p>
+
+  <ul>
+    <li><strong>F-Tag F684 (Quality of Care)</strong> &mdash; the omnibus quality-of-care deficiency, frequently cited where a resident&rsquo;s condition declines because basic care wasn&rsquo;t delivered.</li>
+    <li><strong>F-Tag F686 (Pressure Ulcers)</strong> &mdash; specifically for facility-acquired pressure injuries.</li>
+    <li><strong>F-Tag F689 (Free of Accident Hazards / Supervision)</strong> &mdash; falls, wandering, and elopement.</li>
+    <li><strong>F-Tag F692 (Nutrition / Hydration)</strong> &mdash; malnutrition and dehydration.</li>
+    <li><strong>F-Tag F757&ndash;F761 (Medication-Related)</strong> &mdash; medication errors, unnecessary drugs, and inappropriate use of psychotropics.</li>
+    <li><strong>F-Tag F600&ndash;F610 (Abuse, Neglect, Exploitation, Reporting)</strong> &mdash; the substantive abuse-and-neglect deficiencies and the corresponding reporting failures.</li>
+    <li><strong>F-Tag F725&ndash;F726 (Staffing)</strong> &mdash; sufficient nursing-staff levels and competency.</li>
+  </ul>
+
+  <p>An F-Tag deficiency is not itself a finding of liability, but it is highly probative evidence. A facility with a recent F-Tag F686 deficiency that subsequently allows another resident to develop a Stage IV pressure ulcer faces a much harder defense than one with a clean survey history.</p>
+
+  <h2>Damages framework</h2>
+
+  <h3>1. Past medical expenses</h3>
+
+  <p>Treatment of the abuse-caused injury: wound care for pressure ulcers (often involving repeated debridements, sometimes plastic surgery and flap procedures), fracture repair, infection management (sepsis from untreated wounds is a frequent claim), nutritional rehabilitation, and inpatient or skilled-nursing care to recover from a fall or medication error. Past medical claims are typically modest in elderly plaintiffs (Medicare often pays most of it), but the collateral source rule in the controlling state determines whether the billed amount or paid amount is recoverable.</p>
+
+  <h3>2. Future medical expenses</h3>
+
+  <p>Smaller than in younger-plaintiff catastrophic injury cases, but not trivial. A non-fatal Stage IV pressure ulcer can require months of wound care; a hip fracture in an elderly patient often triggers a chain of declining function with substantial home-health or skilled-nursing costs. A life-care planner sometimes prepares this projection, scaled to a much shorter expected remaining life than in a young-plaintiff case.</p>
+
+  <h3>3. Pain and suffering (non-economic damages)</h3>
+
+  <p>This is the largest category in most elder abuse cases. Elderly plaintiffs have low lost-wages claims (often zero post-retirement), but the dignity and suffering interest is significant. Stage IV pressure ulcers cause months of severe pain; malnutrition and dehydration are documented to cause distress; physical and emotional abuse leave both physical injury and lasting psychological harm. In California, when the &sect; 15657 standard is met, the decedent&rsquo;s pre-death pain and suffering becomes recoverable by heirs &mdash; a major departure from the ordinary survival-statute rule that bars such recovery once the plaintiff dies.</p>
+
+  <h3>4. Restitution (financial exploitation)</h3>
+
+  <p>Full return of stolen money, plus statutory enhancements in many states. Treble damages are available under California Welfare &amp; Institutions Code &sect; 15657.5 for financial elder abuse; similar provisions exist in Illinois, Texas, and other states. Pre-judgment interest is available in most jurisdictions and substantially increases the recovery in cases where the exploitation was discovered years after it occurred.</p>
+
+  <h3>5. Wrongful death / survival damages</h3>
+
+  <p>Where the neglect or abuse contributed to death, family members may recover under the state&rsquo;s wrongful death statute: loss of companionship, funeral and burial costs, and (depending on the state) economic support that the decedent would have provided. The survival statute (separate from wrongful death) typically allows recovery of pre-death economic losses and medical expenses. In California, &sect; 15657 uniquely authorizes recovery of pre-death pain and suffering by heirs, which can dramatically increase the total recovery.</p>
+
+  <h3>6. Punitive damages and attorney fees</h3>
+
+  <p>Available under most state Elder Abuse Acts on a heightened evidentiary showing (typically clear and convincing evidence of "recklessness, oppression, fraud, or malice"). Punitive damages must bear some reasonable relationship to compensatory damages (per <em>State Farm v. Campbell</em> and progeny), but in elder abuse cases the ratio can be aggressive given the vulnerability of the victims and the egregiousness of the conduct. Attorney fees under California &sect; 15657 are particularly important because they let plaintiffs&rsquo; counsel take cases that would otherwise be economically unviable.</p>
+
+  <h2>Modifier: state framework</h2>
+
+  <ul>
+    <li><strong>California (EADACPA + &sect; 15657):</strong> the gold standard for plaintiffs. Calculator applies a substantial enhanced-remedy bonus.</li>
+    <li><strong>Illinois (Nursing Home Care Act):</strong> treble damages for willful violations, attorney fees. Calculator applies a similar bonus.</li>
+    <li><strong>Florida (Ch. 415), Texas (Ch. 48), New York, Pennsylvania, Massachusetts:</strong> strong frameworks with some statutory enhancement but typically less aggressive than CA/IL. Calculator applies a moderate bonus.</li>
+    <li><strong>Most other states:</strong> general tort-law framework with limited statutory enhancement. Calculator applies the baseline range.</li>
+  </ul>
+
+  <h2>Modifier: severity and type of harm</h2>
+
+  <ul>
+    <li>Stage III&ndash;IV pressure ulcers and malnutrition/dehydration carry a small uplift because the documentary record is typically strong and the suffering is well-documented.</li>
+    <li>Falls and medication errors carry a moderate uplift, depending on the resulting injury.</li>
+    <li>Sexual abuse carries a substantial uplift reflecting both the dignity-interest harm and the typical jury response.</li>
+    <li>Emotional/psychological abuse alone (without physical harm) is typically the lowest-valuation category because damages are harder to prove.</li>
+    <li>Financial exploitation valuation is anchored to the dollar amount stolen, then multiplied by statutory enhancements where applicable.</li>
+  </ul>
+
+  <h2>Modifier: age</h2>
+
+  <p>Older victims (90+) modestly increase the per-incident pain-and-suffering value (greater vulnerability, more sympathetic jury) but reduce the wrongful death economic-support component (shorter remaining life). The net effect is small.</p>
+
+  <h2>Worked example: nursing home pressure ulcer leading to sepsis and death</h2>
+
+  <p>82-year-old resident at a California skilled nursing facility develops a Stage IV pressure ulcer over six weeks; facility records show repeated missed turn-and-reposition documentation; resident develops sepsis and dies. Facility had a prior F-Tag F686 deficiency within the last survey cycle.</p>
+
+  <ul>
+    <li>Past medical (wound care, hospitalization, end-of-life ICU): ~$180K.</li>
+    <li>Pre-death pain and suffering (six weeks of progressive Stage IV ulceration plus septic illness): jury value substantial &mdash; recoverable by heirs under &sect; 15657 if heightened-conduct standard is met. ~$1.5M&ndash;$3M.</li>
+    <li>Wrongful death (loss of companionship for adult children): ~$500K&ndash;$1.5M.</li>
+    <li>Attorney fees recoverable under &sect; 15657.</li>
+    <li>Punitive damages possible given prior F-Tag and pattern evidence.</li>
+  </ul>
+
+  <p>Typical settlement range for facts of this profile: <strong>$2.5M&ndash;$5M+</strong>, depending on insurance coverage, the strength of the documentary record, and whether the case proceeds to trial or settles in mediation.</p>
+
+  <h2>Worked example: financial exploitation via undue influence</h2>
+
+  <p>Adult child holds power of attorney for elderly parent with mild cognitive impairment; over three years, transfers $400K from parent&rsquo;s accounts to own use; siblings discover after parent&rsquo;s death.</p>
+
+  <ul>
+    <li>Restitution: $400K.</li>
+    <li>Treble damages (California &sect; 15657.5): $1.2M total.</li>
+    <li>Pre-judgment interest from earliest transfer.</li>
+    <li>Punitive damages on clear-and-convincing showing of intentional misconduct.</li>
+    <li>Attorney fees recoverable.</li>
+  </ul>
+
+  <p>Recovery often exceeds <strong>$1.5M</strong> for facts of this profile, plus fees. Practical recovery is limited by the wrongdoer&rsquo;s remaining assets, which is often the binding constraint.</p>
+
+  <h2>What the calculator does NOT include</h2>
+
+  <ul>
+    <li><strong>Pre-suit notice requirements.</strong> Some states require formal notice before filing a nursing home claim.</li>
+    <li><strong>Arbitration clauses.</strong> Many admission agreements force the dispute into arbitration, which materially changes settlement dynamics.</li>
+    <li><strong>Specific insurance policy limits.</strong> A facility with $1M of coverage and modest assets caps recovery regardless of theoretical damages.</li>
+    <li><strong>Pre-existing condition defenses.</strong> Elderly plaintiffs have many; expert work is needed to isolate abuse-caused harm from baseline decline.</li>
+  </ul>
+
+  <h2>Honest about uncertainty</h2>
+
+  <p>Elder abuse case valuations vary widely based on factors a calculator can&rsquo;t capture: the strength of the facility&rsquo;s documentary record, prior F-Tag history, the personality of the surviving family, insurance coverage, jurisdiction-specific procedural rules, and the credibility of the heightened-conduct evidence under the state Elder Abuse Act. The calculator&rsquo;s range is a starting reference, not a prediction. An experienced elder abuse attorney can provide much more specific valuation after reviewing the records.</p>
+
+  <h2>Where to go from here</h2>
+  <p>For abuse categories and common nursing home neglect patterns, see <a href="/case-types">case types</a>. For practical guidance, see <a href="/guides/what-to-do-if-you-suspect-elder-abuse">what to do if you suspect elder abuse</a>. For common misconceptions, see <a href="/guides/common-elder-abuse-claim-misconceptions">common elder abuse claim misconceptions</a>.</p>
+</BaseLayout>

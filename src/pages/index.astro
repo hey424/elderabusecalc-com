@@ -1,0 +1,208 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const title = 'Elder Abuse Settlement Calculator | Estimate Compensation | elderabusecalc.com';
+const description = 'Estimate the potential compensation range for an elder abuse, nursing home neglect, or financial exploitation claim. Free, informational, and based on published settlement data and state Elder Abuse Acts.';
+---
+<BaseLayout title={title} description={description}>
+  <h1>Elder Abuse Settlement Calculator</h1>
+  <p><em>Reviewed by Marlowe Quinn (MQ), Elder Abuse Practice Lead. Updated May 2026.</em></p>
+
+  <p>Elder abuse and nursing home neglect cases sit at the intersection of state Elder Abuse Acts, federal nursing home regulations (OBRA 1987 and the CMS F-Tag survey system), and ordinary tort law. Recoveries vary widely depending on the type of abuse, the severity of the resulting injury, the strength of the documentary record (facility records, CMS surveys, ombudsman reports, APS findings), and the state where the harm occurred. California in particular provides enhanced remedies &mdash; including attorney fees and heightened damages when the plaintiff proves "recklessness, oppression, fraud, or malice" &mdash; under Welfare &amp; Institutions Code &sect; 15657. This calculator estimates the rough recovery range based on the facts that drive case valuations. It is informational only and is not a substitute for evaluation by an experienced elder abuse attorney.</p>
+
+  <h2>Run the estimate</h2>
+
+  <p>Enter the key facts. The output reflects published settlement data, state Elder Abuse Act remedies, and the damages categories used in elder-abuse and nursing-home litigation.</p>
+
+  <form id="calc" novalidate>
+    <label for="abuse-category">Type of abuse</label>
+    <select id="abuse-category" name="abuse-category">
+      <option value="physical">Physical abuse (hitting, restraints, force)</option>
+      <option value="sexual">Sexual abuse</option>
+      <option value="emotional">Emotional / psychological abuse (yelling, isolation, humiliation)</option>
+      <option value="neglect">Neglect (failure to provide food, water, hygiene, or medical care)</option>
+      <option value="financial">Financial exploitation (theft, scams, undue influence, POA abuse)</option>
+      <option value="multiple">Multiple categories</option>
+    </select>
+
+    <label for="facility-type">Where did the abuse occur?</label>
+    <select id="facility-type" name="facility-type">
+      <option value="nursing-home">Skilled nursing facility (nursing home)</option>
+      <option value="assisted-living">Assisted living facility</option>
+      <option value="hospital">Hospital</option>
+      <option value="home">Victim&rsquo;s own home (home health agency)</option>
+      <option value="family">Family or informal caregiver</option>
+    </select>
+
+    <label for="specific-harm">Specific harm</label>
+    <select id="specific-harm" name="specific-harm">
+      <option value="bedsore">Pressure ulcer / bedsore (Stage III&ndash;IV)</option>
+      <option value="fall">Fall (broken hip or head injury)</option>
+      <option value="malnutrition">Malnutrition or dehydration</option>
+      <option value="medication-error">Medication error</option>
+      <option value="wandering">Wandering / elopement</option>
+      <option value="financial-loss">Financial loss only</option>
+      <option value="fatal">Fatal outcome (wrongful death)</option>
+      <option value="other">Other</option>
+    </select>
+
+    <label for="severity">Severity</label>
+    <select id="severity" name="severity">
+      <option value="mild">Mild (no lasting injury)</option>
+      <option value="moderate">Moderate (significant injury, recoverable)</option>
+      <option value="severe">Severe (catastrophic, permanent)</option>
+      <option value="fatal">Fatal</option>
+    </select>
+
+    <label for="state">State where the abuse occurred</label>
+    <input id="state" name="state" type="text" value="California" />
+
+    <label for="age">Age of victim</label>
+    <input id="age" name="age" type="number" value="82" min="55" max="110" />
+
+    <label for="dollar-amount">Dollar amount stolen (financial exploitation only, USD)</label>
+    <input id="dollar-amount" name="dollar-amount" type="number" value="0" min="0" />
+
+    <button type="submit">Estimate recovery range</button>
+  </form>
+
+  <p id="result" aria-live="polite"></p>
+
+  <h2>How the calculator works</h2>
+
+  <p>Elder abuse compensation is built from several components, each driven by different facts:</p>
+
+  <ol>
+    <li><strong>Medical expenses (past and future).</strong> Treatment of pressure ulcers, fracture repair, infection management, rehabilitation, and ongoing care for the consequences of neglect. Many elderly plaintiffs have substantial Medicare/Medicaid-paid medical bills; jurisdiction-specific collateral source rules determine whether the billed or paid amount is recoverable.</li>
+    <li><strong>Pain and suffering.</strong> Frequently the largest single category in elder abuse cases. Elderly plaintiffs have lower lost-wages claims but often endure prolonged, dignity-stripping suffering &mdash; the jury value of which can be substantial. In California, when the heightened &sect; 15657 standard is met, the heirs may continue to recover pre-death pain and suffering, an important departure from the usual survival-statute rule.</li>
+    <li><strong>Restitution (for financial exploitation).</strong> Full return of stolen money, often with treble damages and pre-judgment interest under state elder financial abuse statutes.</li>
+    <li><strong>Wrongful death.</strong> Where neglect contributed to death, family members may recover loss of companionship, funeral costs, and (in &sect; 15657 cases) pre-death pain and suffering.</li>
+    <li><strong>Punitive damages and attorney fees.</strong> Available under most state Elder Abuse Acts when "recklessness, oppression, fraud, or malice" is shown by clear and convincing evidence. These statutory enhancements substantially change the economics of a case.</li>
+  </ol>
+
+  <p>The calculator uses published average settlements as base ranges, then adjusts for state framework, severity, and (for California) the enhanced-remedy bonus that applies when the facts support a &sect; 15657 finding. See our <a href="/methodology">methodology page</a> for the underlying math and our <a href="/guides/how-elder-abuse-settlements-are-calculated">detailed guide</a> for the worked examples.</p>
+
+  <h2>Settlement ranges by severity</h2>
+
+  <p>Published data from elder abuse and nursing home verdict trackers shows the following approximate distribution:</p>
+
+  <ul>
+    <li><strong>Mild neglect (no major lasting injury):</strong> $50,000&ndash;$250,000. Often resolves through pre-litigation demand or early mediation; documentary case is usually built from facility records and APS findings.</li>
+    <li><strong>Moderate (Stage III pressure ulcer, fractured hip with recovery, significant but non-catastrophic injury):</strong> $250,000&ndash;$1.5M. Strong CMS deficiency record and a clear breach of standard of care drive the higher end.</li>
+    <li><strong>Severe (catastrophic injury, Stage IV pressure ulcer to bone, chain-of-failures, debilitating outcomes):</strong> $1M&ndash;$5M. Often involve multiple F-Tag deficiencies and prior survey histories establishing pattern.</li>
+    <li><strong>Wrongful death from neglect:</strong> $1M&ndash;$10M+, with the high end reserved for cases involving particularly egregious conduct, surviving evidence of suffering, and California-style enhanced remedies.</li>
+    <li><strong>Financial exploitation:</strong> full restitution + treble damages (in many states) + punitive damages where intent is clear. Dollar value is anchored to the amount stolen but can multiply substantially with statutory enhancements.</li>
+  </ul>
+
+  <p>These ranges are general benchmarks from publicly available data. Specific outcomes turn on liability strength, the documentary record, the defendant&rsquo;s assets and insurance, the jurisdiction, and case-specific facts.</p>
+
+  <h2>Factors that move the recovery up or down</h2>
+
+  <ul>
+    <li><strong>Documentary record.</strong> Nursing home cases live or die by records: facility charts, MAR (medication administration records), wound-care notes, CMS survey results and F-Tag deficiencies, prior ombudsman complaints, and APS investigative reports. A facility with a history of repeat deficiencies in the same area (F-Tag F689 supervision, F-Tag F684 pressure ulcers, F-Tag F812 food sanitation) drives the case up.</li>
+    <li><strong>State framework.</strong> California (EADACPA, &sect; 15657 enhanced remedies including attorney fees), Florida (Ch. 415 with civil cause of action under &sect; 415.1111), Texas (Ch. 48), Illinois (Nursing Home Care Act with treble damages for willful violations), and a handful of others offer the strongest plaintiff frameworks.</li>
+    <li><strong>Defendant identity.</strong> Large for-profit nursing home chains with significant insurance and assets settle for more than small family-operated facilities at the same liability level. Where the chain&rsquo;s ownership is structured to shield assets (the "shell-corporation" defense pattern), piercing-the-corporate-veil theories may be needed.</li>
+    <li><strong>Heightened-conduct evidence.</strong> Statutory enhancements (attorney fees, pre-death pain and suffering for heirs, punitive damages) typically require proof by clear and convincing evidence of "recklessness, oppression, fraud, or malice." A staffing-ratio violation combined with a falsified chart entry can support this finding; a single instance of inadvertent error usually cannot.</li>
+    <li><strong>Arbitration clauses.</strong> Many admission contracts include pre-dispute arbitration clauses. Analyzing whether the clause is enforceable (proper signatory, no unconscionability, no statutory prohibition such as some state Medicaid-resident protections) is one of the first questions an experienced attorney addresses.</li>
+    <li><strong>Pre-existing condition / "egg-shell plaintiff."</strong> Elderly plaintiffs typically have many pre-existing conditions; defendants argue the harm would have occurred anyway. Tight medical-causation expert work is needed to isolate the abuse-caused harm.</li>
+  </ul>
+
+  <h2>What this calculator is not</h2>
+
+  <ul>
+    <li>It does not predict the outcome of any specific case.</li>
+    <li>It does not capture jurisdiction-specific procedural rules (pre-suit notice requirements, mediation requirements, evidentiary thresholds for statutory enhancement).</li>
+    <li>It does not substitute for the detailed records review and expert work that experienced elder abuse attorneys perform.</li>
+    <li>It does not provide legal or medical advice. After identifying suspected abuse, the most important steps are reporting to Adult Protective Services, preserving evidence, and consulting an experienced elder abuse attorney.</li>
+  </ul>
+
+  <h2>If abuse is ongoing</h2>
+
+  <p>If you believe abuse or neglect is happening right now, the priority is the older person&rsquo;s safety, not the lawsuit. Call your state&rsquo;s Adult Protective Services (APS) intake line or the National Center on Elder Abuse hotline (Eldercare Locator) at <strong>1-800-677-1116</strong>. In an emergency, call 911. For ongoing nursing home concerns, your state&rsquo;s Long-Term Care Ombudsman investigates resident complaints. Civil legal claims can wait; immediate protection cannot.</p>
+
+  <h2>Where to learn more</h2>
+
+  <p>For the underlying mechanics, see <a href="/methodology">our methodology</a>. For a deeper look at the abuse categories and nursing home neglect patterns, see <a href="/case-types">case types</a>. For practical guidance, see <a href="/guides/what-to-do-if-you-suspect-elder-abuse">what to do if you suspect elder abuse</a>. For common myths, see <a href="/guides/common-elder-abuse-claim-misconceptions">common elder abuse claim misconceptions</a>.</p>
+
+  <script>
+    const form = document.getElementById('calc');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const category = document.getElementById('abuse-category').value;
+        const facility = document.getElementById('facility-type').value;
+        const harm = document.getElementById('specific-harm').value;
+        const severity = document.getElementById('severity').value;
+        const state = document.getElementById('state').value;
+        const age = parseInt(document.getElementById('age').value, 10);
+        const dollarAmount = parseInt(document.getElementById('dollar-amount').value, 10) || 0;
+
+        const severityBase = {
+          'mild': [50000, 250000],
+          'moderate': [250000, 1500000],
+          'severe': [1000000, 5000000],
+          'fatal': [1000000, 10000000]
+        };
+
+        const categoryMult = {
+          'physical': 1.0,
+          'sexual': 1.3,
+          'emotional': 0.7,
+          'neglect': 1.0,
+          'financial': 0.6,
+          'multiple': 1.2
+        };
+
+        const facilityMult = {
+          'nursing-home': 1.15,
+          'assisted-living': 1.05,
+          'hospital': 1.1,
+          'home': 0.9,
+          'family': 0.6
+        };
+
+        const harmMult = {
+          'bedsore': 1.15,
+          'fall': 1.05,
+          'malnutrition': 1.1,
+          'medication-error': 1.0,
+          'wandering': 1.05,
+          'financial-loss': 0.85,
+          'fatal': 1.25,
+          'other': 1.0
+        };
+
+        const enhancedRemedyStates = ['California', 'Illinois'];
+        const strongStates = ['Florida', 'Texas', 'New York', 'Pennsylvania', 'Massachusetts'];
+        let stateMult = 1.0;
+        let bonusNote = '';
+        if (enhancedRemedyStates.includes(state)) {
+          stateMult = 1.4;
+          bonusNote = ' (includes enhanced-remedy bonus &mdash; state Elder Abuse Act provides attorney fees and heightened damages on a clear-and-convincing showing of recklessness, oppression, fraud, or malice)';
+        } else if (strongStates.includes(state)) {
+          stateMult = 1.1;
+        }
+
+        const ageMult = age >= 90 ? 1.1 : (age >= 80 ? 1.0 : 0.95);
+
+        const [baseLow, baseHigh] = severityBase[severity] || [100000, 500000];
+        const cMult = categoryMult[category] || 1.0;
+        const fMult = facilityMult[facility] || 1.0;
+        const hMult = harmMult[harm] || 1.0;
+
+        let low = Math.round(baseLow * cMult * fMult * hMult * stateMult * ageMult);
+        let high = Math.round(baseHigh * cMult * fMult * hMult * stateMult * ageMult);
+
+        if (category === 'financial' && dollarAmount > 0) {
+          const trebleStates = ['California', 'Illinois', 'Florida', 'New York'];
+          const multiplier = trebleStates.includes(state) ? 3 : 1.5;
+          low = Math.max(low, Math.round(dollarAmount * multiplier));
+          high = Math.max(high, Math.round(dollarAmount * multiplier * 2));
+        }
+
+        const fmt = (n) => '$' + n.toLocaleString();
+        document.getElementById('result').innerHTML =
+          `Estimated recovery range: <strong>${fmt(low)} &ndash; ${fmt(high)}</strong>${bonusNote}. <em>Wide range reflects the documentary record (facility charts, CMS deficiencies, APS findings), defendant insurance and assets, jurisdictional variation, and the strength of any heightened-conduct showing. Verify with a licensed elder abuse attorney.</em>`;
+      });
+    }
+  </script>
+</BaseLayout>
