@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import LeadCapture from '../components/LeadCapture.astro';
 const title = 'Elder Abuse Settlement Calculator | Estimate Compensation | elderabusecalc.com';
 const description = 'Estimate the potential compensation range for an elder abuse, nursing home neglect, or financial exploitation claim. Free, informational, and based on published settlement data and state Elder Abuse Acts.';
 ---
@@ -65,7 +66,10 @@ const description = 'Estimate the potential compensation range for an elder abus
     <button type="submit">Estimate recovery range</button>
   </form>
 
-  <p id="result" aria-live="polite"></p>
+  
+
+  <LeadCapture caseType="elder_abuse" caseTypeLabel="Elder Abuse" />
+<p id="result" aria-live="polite"></p>
 
   <h2>How the calculator works</h2>
 
@@ -79,7 +83,7 @@ const description = 'Estimate the potential compensation range for an elder abus
     <li><strong>Punitive damages and attorney fees.</strong> Available under most state Elder Abuse Acts when "recklessness, oppression, fraud, or malice" is shown by clear and convincing evidence. These statutory enhancements substantially change the economics of a case.</li>
   </ol>
 
-  <p>The calculator uses published average settlements as base ranges, then adjusts for state framework, severity, and (for California) the enhanced-remedy bonus that applies when the facts support a &sect; 15657 finding. See our <a href="/methodology">methodology page</a> for the underlying math and our <a href="/guides/how-elder-abuse-settlements-are-calculated">detailed guide</a> for the worked examples.</p>
+  <p>The calculator uses published average settlements as base ranges, then adjusts for state framework, severity, and (for California) the enhanced-remedy bonus that applies when the facts support a &sect; 15657 finding. See our <a href="/methodology/">methodology page</a> for the underlying math and our <a href="/guides/how-elder-abuse-settlements-are-calculated/">detailed guide</a> for the worked examples.</p>
 
   <h2>Settlement ranges by severity</h2>
 
@@ -121,7 +125,7 @@ const description = 'Estimate the potential compensation range for an elder abus
 
   <h2>Where to learn more</h2>
 
-  <p>For the underlying mechanics, see <a href="/methodology">our methodology</a>. For a deeper look at the abuse categories and nursing home neglect patterns, see <a href="/case-types">case types</a>. For practical guidance, see <a href="/guides/what-to-do-if-you-suspect-elder-abuse">what to do if you suspect elder abuse</a>. For common myths, see <a href="/guides/common-elder-abuse-claim-misconceptions">common elder abuse claim misconceptions</a>.</p>
+  <p>For the underlying mechanics, see <a href="/methodology/">our methodology</a>. For a deeper look at the abuse categories and nursing home neglect patterns, see <a href="/case-types/">case types</a>. For practical guidance, see <a href="/guides/what-to-do-if-you-suspect-elder-abuse/">what to do if you suspect elder abuse</a>. For common myths, see <a href="/guides/common-elder-abuse-claim-misconceptions/">common elder abuse claim misconceptions</a>.</p>
 
   <script>
     const form = document.getElementById('calc');
